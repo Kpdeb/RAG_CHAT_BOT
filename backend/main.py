@@ -73,11 +73,14 @@ init_db()
 # CORS
 # =========================================================
 
+FRONTEND_URL = os.getenv(
+    "FRONTEND_URL",
+    "http://localhost:3000"
+)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000"
-    ],
+    allow_origins=[FRONTEND_URL],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -88,10 +91,8 @@ app.add_middleware(
 # UPLOAD DIRECTORY
 # =========================================================
 
-UPLOAD_DIR = os.path.join(
-    BASE_DIR,
-    "document_loader"
-)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_DIR = os.path.join(BASE_DIR, "document_loader")
 
 os.makedirs(
     UPLOAD_DIR,

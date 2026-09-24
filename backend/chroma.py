@@ -1,3 +1,4 @@
+import os 
 import hashlib
 
 from langchain_text_splitters import (
@@ -9,7 +10,8 @@ from langchain_chroma import Chroma
 from embedding import embedding_model
 
 
-CHROMA_PATH = "./chroma_db"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CHROMA_PATH = os.path.join(BASE_DIR, "chroma_db")
 
 
 # --------------------------------
