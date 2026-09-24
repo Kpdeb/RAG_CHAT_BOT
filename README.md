@@ -1,4 +1,4 @@
-# 🧠 AI Knowledge Assistant
+# 🧠 KhAAt
 
 An AI-powered knowledge assistant that allows users to upload documents and connect websites, build a searchable knowledge base, and ask questions using natural language.
 
